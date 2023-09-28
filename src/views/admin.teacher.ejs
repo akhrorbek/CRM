@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="../assets/sass/noscript.scss" />
+    </noscript>
+    <title>Teacher Admin</title>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="/admin/course">Courses</a></li>
+                    <li><a href="/admin/teacher">Teachers</a></li>
+                    <li><a href="/admin/group">Groups</a></li>
+                    <li><a href="/admin/student">Students</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <div id="wrapper">
+        <header class="headerWrapper">
+            <h1>Teacher</h1>
+        </header>
+        <section id="three" class="wrapper style2 fade-up">
+            <div class="inner">
+                <h2>Adding Teacher</h2>
+                <div class="split style1">
+                    <section>
+                        <form method="post" action="#">
+                            <div class="fields">
+                                <div class="field half">
+                                    <label for="teacher-name">Teacher Name</label>
+                                    <input type="text" name="name" id="name" placeholder="Teacher name" required />
+                                </div>
+                                <div class="field half">
+                                    <label for="techer-username">Teacher Username</label>
+                                    <input type="text" name="username" id="username" placeholder="Teacher username" required />
+                                </div>
+                                <div class="field half">
+                                    <label for="techer-password">Teacher password</label>
+                                    <input type="password" name="password" id="password" placeholder="Teacher password" required />
+                                </div>
+                                <div class="field half">
+                                    <label for="techer-field">Teacher field</label>
+                                    <select name="field">
+                                        <option selected >Choose field</option>
+                                        <% allCourses.map(e => {%>
+                                            <option ><%=e.title%></option>
+                                        <% });%>
+                                    </select>
+                                </div>
+                                <div class="field half">
+                                    <label for="techer-tel">Teacher Tel</label>
+                                    <input type="tel" name="tel" id="tel" placeholder="(+9989)* -***-**-**" />
+                                </div>
+                            </div>
+                            <ul class="actions">
+                                <button type="submit" class="button submit">Submit</button>
+                            </ul>
+                        </form>
+                    </section>
+                    <section>
+                        <!--Adding teacher-->
+                        <h3 class="teacherTitle text-center">Teachers</h3>
+                        <ul class="teacherList d-flex justify-content-around pt-5">
+                            <% allUsers.map(e=> {%>
+                                <li class="card p-4 bg-primary rounded-5 mt-5">
+                                    <h5 class="text-light">Teacher name: <%=e.name %></h5>
+                                    <h5 class=""> Field: <%=e.field %></h5>
+                                    <h5 class="">Tel: <%=e.tel %></h5>
+                                    <button id="<%= e.id %>" onclick="deleteHandle(event)" class="button btn-primary">Delete</button>
+                                </li>
+                            <%}); %>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="../assets/app.js"></script>
+</body>
+
+</html>

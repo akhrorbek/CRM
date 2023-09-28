@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Node.js 7",
+        "type": "node.js",
+        "teacher": "Quvonchbek",
+        "days": "everyday",
+        "time": "9:00 a.m"
+    },
+    {
+        "id": 2,
+        "name": "Node.js 7",
+        "type": "node.js",
+        "teacher": "Baxtiyor",
+        "days": "tue-thur-sat",
+        "time": "9:00 a.m"
+    },
+    {
+        "id": 3,
+        "name": "N37",
+        "type": "node.js",
+        "teacher": "Baxtiyor",
+        "days": "tue-thur-sat",
+        "time": "7:30 a.m"
+    }
+]

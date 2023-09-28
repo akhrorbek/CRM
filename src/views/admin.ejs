@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/sass/noscript.scss" />
+	</noscript>
+	<title>Admin</title>
+</head>
+
+
+<body>
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="/admin/course">Courses</a></li>
+					<li><a href="/admin/teacher">Teachers</a></li>
+					<li><a href="/admin/group">Groups</a></li>
+					<li><a href="/admin/student">Students</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<div id="wrapper">
+		<h1>Welcome To Admin Page</h1>
+		<section id="intro" class="wrapper style1 fullscreen fade-up">
+
+			<div class="inner">
+				<h1>Dashboard</h1>
+				<ul class="actions">
+					<% allUsers.map(e=> {%>
+						<li class="p-3">
+							<h5>
+								Admin name: <%=e.name %>
+							</h5>
+							<h5>
+								Admin username : <%=e.username %>
+							</h5>
+							<h5>
+								Tel: <%=e.tel %>
+							</h5>
+						</li>
+						<%}); %>
+				</ul>
+			</div>
+		</section>
+	</div>
+
+</body>
+
+</html>

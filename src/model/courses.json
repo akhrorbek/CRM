@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Node.js",
+        "price": 1200000,
+        "description": "Standart"
+    },
+    {
+        "id": 2,
+        "title": "Java",
+        "price": 1400000,
+        "description": "bootcamp"
+    },
+    {
+        "id": 3,
+        "title": "Python",
+        "price": 1300000,
+        "description": "backend"
+    },
+    {
+        "id": 4,
+        "title": "Rust",
+        "price": 1400000,
+        "description": "standart"
+    }
+]

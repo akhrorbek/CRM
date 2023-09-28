@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "name": "Akhror",
+        "username": "akhror_bek",
+        "password": "12345678",
+        "course": "Node.js",
+        "role": "admin",
+        "tel": 994938211
+    },
+    {
+        "id": 2,
+        "name": "Baxtiyor",
+        "username": "baxtiyor_bek",
+        "password": "12345678",
+        "groupId": [
+            2,
+            3
+        ],
+        "role": "teacher",
+        "field": "node.js",
+        "tel": 903328211
+    },
+    {
+        "id": 3,
+        "name": "Jakhongir",
+        "username": "jakhongir_bek",
+        "password": "12345678",
+        "groupId": [],
+        "role": "teacher",
+        "field": "python",
+        "tel": 903328211
+    },
+    {
+        "id": 4,
+        "name": "Islombek",
+        "username": "islom_bek",
+        "password": "1234567",
+        "role": "student",
+        "course": "Node.js",
+        "tel": 903328211,
+        "group": "N37"
+    },
+    {
+        "id": 5,
+        "name": "Akhror",
+        "username": "ahror_bek",
+        "password": "12345678",
+        "role": "student",
+        "course": "Node.js",
+        "tel": 903328211,
+        "group": "N37"
+    }
+]

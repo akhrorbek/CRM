@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/sass/noscript.scss" />
+	</noscript>
+    <title>Admin Course</title>
+</head>
+<body>
+
+
+    <!-- Sidebar -->
+
+
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="/admin/course">Courses</a></li>
+					<li><a href="/admin/teacher">Teachers</a></li>
+					<li><a href="/admin/group">Groups</a></li>
+					<li><a href="/admin/student">Students</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<div id="wrapper">
+		<header class="headerWrapper">
+			<h1>Courses</h1>
+		</header>
+		<section id="three" class="wrapper style1 fade-up">
+			<div class="inner">
+				<h2>Create Courses</h2>
+				<div class="split style1">
+					<section>
+						<form method="post" action="/admin/course" enctype="application/x-www-form-urlencoded">
+							<div class="fields">
+								<div class="field half">
+									<label for="name">Course name</label>
+									<input type="text" name="title" id="name" placeholder="Course name" required />
+								</div>
+								<div class="field half">
+									<label for="price">Course price</label>
+									<input type="text" name="price" id="price" placeholder="Price" required />
+								</div>
+								<div class="field half">
+									<label for="description">Course description</label>
+									<input type="text" name="description" id="description" placeholder="Description" required />
+								</div>
+							</div>
+							<ul class="actions">
+								<button type="submit" class="button submit">Submit</button>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<!--Adding courses-->
+						<h3 class="courseTitle text-center">Exist Courses</h3>
+                        <ul class="courseList d-flex flex-wrap justify-content-around pt-5">
+                            <% allCourses.map(e=> {%>
+                                <li class="card bg-primary p-4 rounded-5 mt-5">
+                                    <h5>Course name: <%=e.title %></h5>
+                                    <h5>Course price: <%=e.price %></h5>
+                                    <h5>Description: <%=e.description %></h5>
+									<button id="<%= e.id %>" onclick="deleteHandleCourse(event)" class="button btn-danger">Delete</button>
+                                </li>
+                            <%}); %>
+                        </ul>
+
+					</section>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+
+	<script src="../assets/app.js"></script>
+</body>
+</html>

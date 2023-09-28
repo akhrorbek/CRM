@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/sass/noscript.scss" />
+	</noscript>
+	<title>Student Admin</title>
+</head>
+
+<body>
+	<!-- <script>
+		function deleteHandle(e) {
+        const Id = `${e.target.id}`
+        console.log(Id);
+    }
+	</script> -->
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="/admin/course">Courses</a></li>
+					<li><a href="/admin/teacher">Teachers</a></li>
+					<li><a href="/admin/group">Groups</a></li>
+					<li><a href="/admin/student">Students</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<div id="wrapper">
+		<header class="headerWrapper">
+			<h1>Student</h1>
+		</header>
+		<section id="three" class="wrapper style3 fade-up">
+			<div class="inner">
+				<h2>Adding Student</h2>
+				<div class="split style1">
+					<section>
+						<form method="post" action="/admin/student" enctype="application/x-www-form-urlencoded">
+							<div class="fields">
+								<div class="field half">
+									<label for="name">Student name</label>
+									<input type="text" name="name" id="name" placeholder="Student name" required />
+								</div>
+								<div class="field half">
+									<label for="student-username">Student Username</label>
+									<input type="text" name="username" id="username" placeholder="Student username" required />
+								</div>
+								<div class="field half">
+									<label for="student-password">Student Password</label>
+									<input type="password" name="password" id="password" placeholder="Student password" required />
+								</div>
+								<div class="field half">
+                                    <label for="student-tel">Student Tel</label>
+                                    <input type="tel" name="tel" id="tel" placeholder="(+9989)* -***-**-**" />
+                                </div>
+								<div class="field half">
+									<label for="student-group">Student Group Type</label>
+									<select name="course">
+										<option selected>Choose course type</option>
+										<% allCourses.map(e=> { %>
+											<option><%=e.title %></option>
+										<% }); %>
+									</select>
+								</div>
+								<div class="field half">
+									<label for="student-group">Student Group name</label>
+									<select name="group">
+										<option selected>Choose group name</option>
+										<% allGroups.map(e=> { %>
+											<option><%=e.name %></option>
+										<% }); %>
+									</select>
+								</div>
+							</div>
+							<ul class="actions">
+								<button type="submit" class="button submit">Submit</button>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<!--Adding students-->
+
+						<h3 class="studentTitle text-center">Students</h3>
+                        <ul class="studentList d-flex flex-wrap justify-content-around pt-5">
+                            <% allUsers.map(e=> {%>
+                                <li class="card bg-info p-4 rounded-5 mt-5">
+                                    <h5>Student name: <%=e.name %></h5>
+                                    <h5>Course : <%=e.course %></h5>
+                                    <h5>Group: <%=e.group %></h5>
+									<button id="<%= e.id %>" class="button" onclick="deleteHandle(event)">Del</button>
+                                </li>
+                            <%}); %>
+                        </ul>
+					</section>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<script src="../assets/app.js"></script>
+
+</body>
+
+</html>
